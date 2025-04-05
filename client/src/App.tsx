@@ -13,7 +13,7 @@ export const CareRoutes = () => {
 
 function App() {
   return (
-    <div>
+    <div className="">
       <BrowserRouter>
         <CareRoutes />
       </BrowserRouter>

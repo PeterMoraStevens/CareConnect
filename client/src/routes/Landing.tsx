@@ -1,21 +1,29 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { TypeAnimation } from "react-type-animation";
+import landingBg from "../assets/landingBG.png";
+import logo from "../assets/logo.png";
 
 type Props = {};
 
 const Landing = (props: Props) => {
   return (
     <div className="">
-      <Navbar />
+      {/* <Navbar /> */}
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage:
-            "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+          backgroundImage: `url(${landingBg})`,
         }}
       >
-        <div className="hero-overlay"></div>
+      </div>
+    </div>
+  );
+};
+
+export default Landing;
+
+{/* <div className="hero-overlay"></div>
         <div className="hero-content text-neutral-content text-center bg-neutral-900 rounded-4xl">
           <div className="max-w-lg">
             <h1 className="mb-5 text-5xl font-bold">
@@ -48,10 +56,4 @@ const Landing = (props: Props) => {
             </p>
             <button className="btn btn-primary">Get Started</button>
           </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Landing;
+        </div> */}

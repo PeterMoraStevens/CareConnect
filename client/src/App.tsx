@@ -6,6 +6,7 @@ import Resources from "./routes/Resources";
 import AddOrganization from "./components/AddOrganization";
 import OrgSignUp from "./routes/OrgSignUp";
 import OrgSignIn from "./routes/OrgSignIn";
+import Profiles from "./routes/Profiles";
 
 export const CareRoutes = () => {
   return (
@@ -15,6 +16,7 @@ export const CareRoutes = () => {
       <Route path="/AddOrganization" element={<AddOrganization />} />
       <Route path="/SignUpOrg" element={<OrgSignUp />} />
       <Route path="/SignInOrg" element={<OrgSignIn />} />
+      <Route path="/orgProfile" element={<Profiles/>}/>
     </Routes>
   );
 };

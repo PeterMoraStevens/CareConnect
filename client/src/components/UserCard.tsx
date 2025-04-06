@@ -11,7 +11,7 @@ interface props {
     email: string
 }
 
-function PreviewCard({name, address, description, image, website, hours, phone, email}: props) {
+function UserCard({name, address, description, image, website, hours, phone, email}: props) {
     const googleMapsURL = `https://www.google.com/maps/dir/?api=1&destination=${address}`
     
     return (
@@ -65,4 +65,4 @@ function PreviewCard({name, address, description, image, website, hours, phone, 
     )
 }
 
-export default PreviewCard
+export default UserCard

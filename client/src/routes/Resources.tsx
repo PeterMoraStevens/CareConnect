@@ -44,8 +44,20 @@ const Resources = () => {
   }, []);
 
   return (
-    <div>
-      
+    <div className = "min-h-screen justify-center flex">
+        <ul className = "grid-cols-3 grid gap-16 max-w-[80%]">
+          
+          {resources.map((resource ) => {
+              return (
+                <li key={resource.id}>
+                  <PreviewCard name={resource.name} website={resource.url} image={resource.img} address={resource.address} description={resource.desc} hours={resource.hours} phone = {resource.Phone} email ={resource.Email}/>
+                </li>
+              )
+          })}
+                
+                
+          
+        </ul>
     </div>
   );
 };

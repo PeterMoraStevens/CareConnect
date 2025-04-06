@@ -1,24 +1,19 @@
 import React from "react";
+import logo from "../assets/logo.svg";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <div className="navbar bg-ghost shadow-sm top-0 fixed">
-      <div className="flex-1">
-        <button className="btn btn-neutral text-xl">CareConnect</button>
+    <nav className="top-0 w-full fixed">
+      <div className="mt-10 flex flex-row justify-between items-center text-black">
+        <div className=" ml-15 text-black flex items-center text-7xl font-semibold">
+          <img src={logo} alt="logo" className="w-20 h-20 mt-2"></img>
+          <h1 className="">CareConnect</h1>
+        </div>
+        <button className="mr-15 flex font-semibold btn btn-outline text-xl" >Sign in </button>
       </div>
-      <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <button className="btn btn-secondary mr-4">User Sign-In</button>
-          </li>
-          <li>
-            <button className="btn btn-primary">Org Sign-In</button>
-          </li>
-        </ul>
-      </div>
-    </div>
+    </nav>
   );
 };
 

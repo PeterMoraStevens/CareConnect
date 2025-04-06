@@ -9,7 +9,7 @@ type Props = {};
 const Landing = (props: Props) => {
   return (
     <div className="">
-      {/* <Navbar /> */}
+      <Navbar />
       <div
         className="hero min-h-screen"
         style={{

@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { TypeAnimation } from "react-type-animation";
 import landingBg from "../assets/landingBG.png";
-import logo from "../assets/logo.png";
+
 
 type Props = {};
 
@@ -11,7 +11,7 @@ const Landing = (props: Props) => {
     <div className="">
       <Navbar />
       <div
-        className="hero min-h-screen"
+        className="min-h-screen"
         style={{
           backgroundImage: `url(${landingBg})`,
         }}

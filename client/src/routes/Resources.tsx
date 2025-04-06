@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { db } from "../api/firebase"; // Adjust path as needed
 import { collection, getDocs } from "firebase/firestore";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import PreviewCard from "../components/PreviewCard";
 
 interface Resource {
   id: string;

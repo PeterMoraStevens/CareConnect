@@ -8,6 +8,7 @@ interface props {
   hours: any;
   phone: string;
   email: string;
+  i: number;
 }
 
 function PreviewCard({
@@ -19,11 +20,10 @@ function PreviewCard({
   hours,
   phone,
   email,
-  i
+  i,
 }: props) {
   const googleMapsURL = `https://www.google.com/maps/dir/?api=1&destination=${address}`;
-
-  const modalString = `my_modal_${i}`
+  const modalString = `my_modal_${i}`;
 
   return (
     <>

@@ -2,6 +2,7 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../api/firebase";
 
 import { BsFillPinMapFill } from "react-icons/bs";
+import EditOrganization from "./EditOrganization";
 interface props {
   name: string;
   address: string;
@@ -11,7 +12,25 @@ interface props {
   hours: any;
   phone: string;
   email: string;
+  city: string;
+  state: string;
   ref: any;
+  i: number;
+  id: any;
+}
+
+interface OrganizationData {
+  name: string;
+  address: string;
+  description: string;
+  website: string;
+  image?: string;
+  hours: Record<string, { open: string; close: string }>;
+  phone: string;
+  email: string;
+  city: string;
+  state: string;
+  id: string;
   i: number;
 }
 
@@ -25,12 +44,29 @@ function UserCard({
   phone,
   email,
   ref,
+  city,
+  id,
+  state,
   i,
 }: props) {
   const googleMapsURL = `https://www.google.com/maps/dir/?api=1&destination=${address}`;
   const modalString = `my_modal_${i}`;
   const editModalString = `edit_modal_${i}`;
   const deleteModalString = `delete_modal_${i}`;
+  const org: OrganizationData = {
+    name,
+    address,
+    description,
+    image,
+    website,
+    hours,
+    phone,
+    email,
+    city,
+    state,
+    id,
+    i,
+  };
 
   return (
     <>
@@ -122,14 +158,7 @@ function UserCard({
             {address}
           </div>
           <div className="card-actions">
-            <button
-              onClick={() =>
-                document.getElementById(editModalString).showModal()
-              }
-              className="btn bg-orange-200 text-black hover:bg-orange-400 cursor-pointer"
-            >
-              Edit
-            </button>
+            <EditOrganization organization={org} />
             <button
               onClick={() =>
                 document.getElementById(deleteModalString).showModal()

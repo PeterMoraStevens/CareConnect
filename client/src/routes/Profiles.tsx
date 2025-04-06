@@ -65,18 +65,26 @@ const UserProfile = () => {
         <div className="flex-end">
           <div className="flex">
             <AddOrganization />
-            <button className="btn mx-4 text-xl" onClick={() => {
-              auth.signOut();
-              navigate("/");
-            }}>SignOut</button>
+            <button
+              className="btn mx-4 text-xl"
+              onClick={() => {
+                auth.signOut();
+                navigate("/");
+              }}
+            >
+              SignOut
+            </button>
           </div>
         </div>
       </div>
       <div className="grid-cols-3 grid gap-16 max-w-[80%] mx-8 mt-8">
         {orgs.map((org, i) => (
           <UserCard
+            id={org.ref}
             key={i}
             name={org.name}
+            city={org.city}
+            state={org.state}
             address={org.address}
             description={org.desc}
             website={org.url}
@@ -84,9 +92,7 @@ const UserProfile = () => {
             phone={org.Phone}
             email={org.Email}
             image={org.img}
-            ref={org.ref}
-            i = {i}
-          />
+            ref={org.ref} i={0}          />
         ))}
       </div>
     </div>

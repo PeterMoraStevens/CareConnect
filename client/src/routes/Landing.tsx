@@ -13,9 +13,6 @@ type Props = {
 const Landing = ({ setCity, setState }: Props) => {
   const navigate = useNavigate();
 
-  const [cityInput, setCityInput] = React.useState("");
-  const [stateInput, setStateInput] = React.useState("");
-
   return (
     <div
       className="bg-cover bg-center h-screen"
@@ -39,7 +36,7 @@ const Landing = ({ setCity, setState }: Props) => {
                   className="input w-50 rounded-md bg-gray-500"
                   required
                   onChange={(e) => {
-                    setStateInput(e.target.value);
+                    setState(e.target.value);
                   }}
                 >
                   <option value="">Select State</option>
@@ -107,14 +104,13 @@ const Landing = ({ setCity, setState }: Props) => {
                   className="input bg-gray-500"
                   required
                   onChange={(e) => {
-                    setCityInput(e.target.value);
+                    setCity(e.target.value);
                   }}
                 />
 
                 <button
-                  onClick={() => {
-                    setState(stateInput);
-                    setCity(cityInput);
+                  onClick={(e) => {
+                    e.preventDefault();
                     navigate(`/resources/`);
                   }}
                   className=" flex justify-start btn bg-[#b3d161] text-black hover:bg-[#EEC170] hover:text-black transition-colors duration-300 w-60 rounded-lg"

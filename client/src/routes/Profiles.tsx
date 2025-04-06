@@ -68,20 +68,23 @@ const UserProfile = () => {
   if (!profile) return <p>No profile found</p>;
 
   return (
-    <div className="grid-cols-3 grid gap-16 max-w-[80%]">
-      {orgs.map((org, index) => (
-        <UserCard
-          key={index}
-          name={org.name}
-          address={org.address}
-          description={org.desc}
-          website={org.url}
-          hours={org.hours}
-          phone={org.Phone}
-          email={org.Email}
-          image={org.img} // 👈 Pass the image down
-        />
-      ))}
+    <div className="min-h-screen bg-orange-200">
+       
+        <div className="grid-cols-3 grid gap-16 max-w-[80%] ">
+          {orgs.map((org, index) => (
+            <UserCard
+              key={index}
+              name={org.name}
+              address={org.address}
+              description={org.desc}
+              website={org.url}
+              hours={org.hours}
+              phone={org.Phone}
+              email={org.Email}
+              image={org.img} // 👈 Pass the image down
+            />
+          ))}
+        </div>
     </div>
   );
 };

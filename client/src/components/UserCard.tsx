@@ -40,7 +40,36 @@ function UserCard({name, address, description, image, website, hours, phone, ema
           <button>close</button>
         </form>
       </dialog>
-            <div className="card bg-lime-50 w-96 shadow-xl cursor-pointer" onClick={()=>document.getElementById('my_modal_2').showModal()}>
+
+    <dialog id="edit_modal" className="modal">
+        <div className="modal-box">
+            <h3 className="font-bold text-lg">Edit Fields</h3>
+            <p className="py-4">form content</p>
+            <div className="modal-action">
+            <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn mr-2 btn-error">Cancel</button>
+                <button className="btn btn-success">Save</button>
+            </form>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog id="delete_modal" className="modal">
+        <div className="modal-box">
+            <h3 className="font-bold text-lg">Delete Resource</h3>
+            <p className="py-4">you sure?</p>
+            <div className="modal-action ">
+            <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn mr-2 btn-error">Cancel</button>
+                <button className="btn btn-success">Confirm</button>
+            </form>
+            </div>
+        </div>
+    </dialog>
+
+    <div className="card bg-lime-50 w-96 shadow-xl" >
     <figure className="px-10 pt-10">
         <img
         src={image}
@@ -56,7 +85,8 @@ function UserCard({name, address, description, image, website, hours, phone, ema
             {address}
         </div>
         <div className="card-actions">
-        <button onClick = {() => window.open(website, "_blank")} className="btn bg-orange-300 text-black hover:bg-orange-400">Visit Website</button>
+            <button onClick={()=>document.getElementById('edit_modal').showModal()} className="btn bg-orange-200 text-black hover:bg-orange-400 cursor-pointer">Edit</button>
+            <button onClick={()=>document.getElementById('delete_modal').showModal()} className="btn btn-error text-black hover:bg-orange-400 cursor-pointer">Delete</button>
         </div>
     </div>
     </div>

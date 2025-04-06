@@ -9,10 +9,18 @@ import OrgSignIn from "./routes/OrgSignIn";
 import Profiles from "./routes/Profiles";
 
 export const CareRoutes = () => {
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+
   return (
     <Routes>
+<<<<<<< Updated upstream
       <Route path="/" element={<Landing />} />
       <Route path="/Resources" element={<Resources />} />
+=======
+      <Route path="/" element={<Landing setCity={setCity} setState={setState}/>} />
+      <Route path= "/Resources" element = {<Resources city={city} state={state}/>} />
+>>>>>>> Stashed changes
       <Route path="/AddOrganization" element={<AddOrganization />} />
       <Route path="/SignUpOrg" element={<OrgSignUp />} />
       <Route path="/SignInOrg" element={<OrgSignIn />} />

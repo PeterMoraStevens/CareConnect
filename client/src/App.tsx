@@ -15,7 +15,7 @@ export const CareRoutes = () => {
 
 function App() {
   return (
-    <div className="">
+    <div>
       <BrowserRouter>
         <CareRoutes />
       </BrowserRouter>

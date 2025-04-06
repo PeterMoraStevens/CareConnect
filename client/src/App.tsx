@@ -14,13 +14,8 @@ export const CareRoutes = () => {
 
   return (
     <Routes>
-<<<<<<< Updated upstream
-      <Route path="/" element={<Landing />} />
-      <Route path="/Resources" element={<Resources />} />
-=======
       <Route path="/" element={<Landing setCity={setCity} setState={setState}/>} />
       <Route path= "/Resources" element = {<Resources city={city} state={state}/>} />
->>>>>>> Stashed changes
       <Route path="/AddOrganization" element={<AddOrganization />} />
       <Route path="/SignUpOrg" element={<OrgSignUp />} />
       <Route path="/SignInOrg" element={<OrgSignIn />} />

@@ -164,6 +164,28 @@ const AddOrganization = () => {
               />
             </div>
 
+            <div id="name" className="mt-5">
+              <h3 className="pb-4 font-bold">State of Organization</h3>
+              <input
+                type="text"
+                placeholder="Type here"
+                className="input input-bordered w-full max-w"
+                required
+                onChange={(e) => setState(e.target.value)}
+              />
+            </div>
+
+            <div id="name" className="mt-5">
+              <h3 className="pb-4 font-bold">City of Organization</h3>
+              <input
+                type="text"
+                placeholder="Type here"
+                className="input input-bordered w-full max-w"
+                required
+                onChange={(e) => setCity(e.target.value)}
+              />
+            </div>
+
             <div id="hours" className="mt-5">
               <h3 className="pb-4 font-bold">Hours:</h3>
               <ul className="list-disc pl-5 list-none">

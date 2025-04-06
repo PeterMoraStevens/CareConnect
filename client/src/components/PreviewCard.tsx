@@ -19,12 +19,15 @@ function PreviewCard({
   hours,
   phone,
   email,
+  i
 }: props) {
   const googleMapsURL = `https://www.google.com/maps/dir/?api=1&destination=${address}`;
 
+  const modalString = `my_modal_${i}`
+
   return (
     <>
-      <dialog id="my_modal_2" className="modal">
+      <dialog id={modalString} className="modal">
         <div className="modal-box bg-lime-50 p-10">
           <h3 className="font-bold text-lg">{name}</h3>
           <p className="py-2">{description}</p>
@@ -90,7 +93,7 @@ function PreviewCard({
       </dialog>
       <div
         className="card bg-lime-50 w-96 shadow-xl cursor-pointer"
-        onClick={() => document.getElementById("my_modal_2").showModal()}
+        onClick={() => document.getElementById(modalString).showModal()}
       >
         <figure className="px-10 pt-10">
           <img src={image} alt="Shoes" className="rounded-xl" />

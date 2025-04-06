@@ -73,9 +73,9 @@ const UserProfile = () => {
         </div>
       </div>
       <div className="grid-cols-3 grid gap-16 max-w-[80%] mx-8 mt-8">
-        {orgs.map((org, index) => (
+        {orgs.map((org, i) => (
           <UserCard
-            key={index}
+            key={i}
             name={org.name}
             address={org.address}
             description={org.desc}
@@ -85,6 +85,7 @@ const UserProfile = () => {
             email={org.Email}
             image={org.img}
             ref={org.ref}
+            i = {i}
           />
         ))}
       </div>

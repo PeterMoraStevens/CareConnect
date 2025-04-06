@@ -12,6 +12,7 @@ interface props {
   phone: string;
   email: string;
   ref: any;
+  i: number;
 }
 
 function UserCard({
@@ -24,12 +25,16 @@ function UserCard({
   phone,
   email,
   ref,
+  i,
 }: props) {
   const googleMapsURL = `https://www.google.com/maps/dir/?api=1&destination=${address}`;
+  const modalString = `my_modal_${i}`;
+  const editModalString = `edit_modal_${i}`;
+  const deleteModalString = `delete_modal_${i}`;
 
   return (
     <>
-      <dialog id="my_modal_2" className="modal">
+      <dialog id={modalString} className="modal">
         <div className="modal-box bg-lime-50 p-10">
           <h3 className="font-bold text-lg">{name}</h3>
           <p className="py-2">{description}</p>
@@ -64,7 +69,7 @@ function UserCard({
         </form>
       </dialog>
 
-      <dialog id="edit_modal" className="modal">
+      <dialog id={editModalString} className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">Edit Fields</h3>
           <p className="py-4">form content</p>
@@ -78,7 +83,7 @@ function UserCard({
         </div>
       </dialog>
 
-      <dialog id="delete_modal" className="modal">
+      <dialog id={deleteModalString} className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">Delete Resource</h3>
           <p className="py-4">you sure?</p>
@@ -118,14 +123,16 @@ function UserCard({
           </div>
           <div className="card-actions">
             <button
-              onClick={() => document.getElementById("edit_modal").showModal()}
+              onClick={() =>
+                document.getElementById(editModalString).showModal()
+              }
               className="btn bg-orange-200 text-black hover:bg-orange-400 cursor-pointer"
             >
               Edit
             </button>
             <button
               onClick={() =>
-                document.getElementById("delete_modal").showModal()
+                document.getElementById(deleteModalString).showModal()
               }
               className="btn btn-error text-black hover:bg-orange-400 cursor-pointer"
             >

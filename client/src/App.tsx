@@ -9,8 +9,8 @@ import OrgSignIn from "./routes/OrgSignIn";
 import Profiles from "./routes/Profiles";
 
 export const CareRoutes = () => {
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
+  const [city, setCity] = useState<string>("");
+  const [state, setState] = useState<string>("");
 
   return (
     <Routes>

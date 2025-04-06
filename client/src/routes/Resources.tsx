@@ -11,7 +11,12 @@ interface Resource {
   [key: string]: any;
 }
 
-const Resources = () => {
+interface props {
+  city: string;
+  state: string;
+}
+
+const Resources = ({ city, state }: props) => {
   const [resources, setResources] = useState<Resource[]>([]);
   const [filterResourceType, setFilterResourceType] = useState<string>("");
   // const [filterDemographic, setFilterDemographic] = useState<string>("");
@@ -57,22 +62,27 @@ const Resources = () => {
         </div>
       </div>
       <div className="min-h-screen justify-center flex bg-orange-200">
-        <ul className="grid-cols-3 grid gap-16 max-w-[80%]">
-          {resources.map((resource) => {
-            return (
-              <li key={resource.id}>
-                <PreviewCard
-                  name={resource.name}
-                  website={resource.url}
-                  image={resource.img}
-                  address={resource.address}
-                  description={resource.desc}
-                  hours={resource.hours}
-                  phone={resource.phone}
-                  email={resource.email}
-                />
-              </li>
-            );
+        <ul className="grid-cols-3 mt-8 grid gap-8 max-w-[80%]">
+          {resources.map((resource, i) => {
+            {
+              resource.city.toLowerCase() == city.toLowerCase() &&
+                resource.state.toLowerCase() == state.toLowerCase();
+              return (
+                <li key={resource.id}>
+                  <PreviewCard
+                    i = {i}
+                    name={resource.name}
+                    website={resource.url}
+                    image={resource.img}
+                    address={resource.address}
+                    description={resource.desc}
+                    hours={resource.hours}
+                    phone={resource.phone}
+                    email={resource.email}
+                  />
+                </li>
+              );
+            }
           })}
         </ul>
       </div>
